@@ -24,7 +24,7 @@ HelpUsFind lets anyone make a clear, print-ready poster without any design skill
 3. Upload a clear photo
 4. Download the poster as a PNG (image) or PDF.
 
-##Built with
+## Built with
 * React 18
 * Vite 5
 * Tailwind CSS 3
