@@ -1,8 +1,9 @@
-export const LETTER = {
-  w: 816,
-  h: 1056,
-  inchesW: 8.5,
-  inchesH: 11,
+// A4 = 210 × 297 mm. Pixel size is at 96 dpi (used for the on-screen poster and PNG).
+export const A4 = {
+  w: 794,
+  h: 1123,
+  mmW: 210,
+  mmH: 297,
 }
 
 export const HEADLINES = {

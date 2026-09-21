@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import PosterForm from './components/PosterForm.jsx'
 import PosterPreview from './components/PosterPreview.jsx'
-import { emptyForm, fileSlug, LETTER } from './formDefaults.js'
+import { emptyForm, fileSlug, A4 } from './formDefaults.js'
 import { downloadPosterPdf, downloadPosterPng } from './lib/exportPoster.js'
 import Navbar from './components/Navbar.jsx'
 
@@ -69,14 +69,14 @@ export default function App() {
             >
               {busy === 'pdf' ? 'Creating PDF…' : 'Download PDF'}
             </button>
-            <span className="text-xs text-stone-500">US Letter · 8.5 × 11 in</span>
+            <span className="text-xs text-stone-500">A4 210 × 297 mm (≈ 8.27 × 11.69 inches)</span>
           </div>
           {error ? <p className="mb-3 text-sm text-red-700">{error}</p> : null}
           <div className="overflow-auto rounded-lg border border-stone-300 bg-stone-200/80 p-3 shadow-inner">
             <div
               style={{
-                width: LETTER.w * scale,
-                height: LETTER.h * scale,
+                width: A4.w * scale,
+                height: A4.h * scale,
               }}
             >
               <div
@@ -101,8 +101,8 @@ function usePreviewScale() {
   useEffect(() => {
     function update() {
       const width = window.innerWidth
-      if (width < 640) setScale(Math.min(0.92, (width - 56) / LETTER.w))
-      else if (width < 1024) setScale(Math.min(0.85, (width - 80) / LETTER.w))
+      if (width < 640) setScale(Math.min(0.92, (width - 56) / A4.w))
+      else if (width < 1024) setScale(Math.min(0.85, (width - 80) / A4.w))
       else setScale(0.72)
     }
     update()

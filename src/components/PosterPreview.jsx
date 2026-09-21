@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import {
-  LETTER,
+  A4,
   displayName,
   formatLastSeen,
   hasValue,
@@ -56,8 +56,8 @@ const PosterPreview = forwardRef(function PosterPreview({ form }, ref) {
     <article
       ref={ref}
       style={{
-        width: LETTER.w,
-        height: LETTER.h,
+        width: A4.w,
+        height: A4.h,
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
