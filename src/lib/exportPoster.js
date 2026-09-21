@@ -1,19 +1,19 @@
 import downloadBlob from './downloadBlob.js'
-import { LETTER } from '../formDefaults.js'
+import { A4 } from '../formDefaults.js'
 
 async function posterToPngDataUrl(node) {
   const { toPng } = await import('html-to-image')
   return toPng(node, {
     cacheBust: true,
     pixelRatio: 2,
-    canvasWidth: LETTER.w * 2,
-    canvasHeight: LETTER.h * 2,
-    width: LETTER.w,
-    height: LETTER.h,
+    canvasWidth: A4.w * 2,
+    canvasHeight: A4.h * 2,
+    width: A4.w,
+    height: A4.h,
     style: {
       transform: 'none',
-      width: `${LETTER.w}px`,
-      height: `${LETTER.h}px`,
+      width: `${A4.w}px`,
+      height: `${A4.h}px`,
     },
   })
 }
@@ -30,9 +30,9 @@ export async function downloadPosterPdf(node, filename) {
   const { jsPDF } = await import('jspdf')
   const pdf = new jsPDF({
     orientation: 'portrait',
-    unit: 'in',
-    format: 'letter',
+    unit: 'mm',
+    format: 'a4',
   })
-  pdf.addImage(dataUrl, 'PNG', 0, 0, LETTER.inchesW, LETTER.inchesH)
+  pdf.addImage(dataUrl, 'PNG', 0, 0, A4.mmW, A4.mmH)
   pdf.save(filename)
 }
