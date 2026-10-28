@@ -42,11 +42,10 @@ export default function PosterForm({ form, onChange, onPhoto }) {
                   : nextHeadlines[0]
                 onChange({ ...form, type, headline })
               }}
-              className={`flex-1 rounded-md px-3 py-2 text-sm font-semibold capitalize ${
-                form.type === type
+              className={`flex-1 rounded-md px-3 py-2 text-sm font-semibold capitalize ${form.type === type
                   ? 'bg-ink text-banner'
                   : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
-              }`}
+                }`}
             >
               Missing {type}
             </button>
@@ -188,7 +187,7 @@ export default function PosterForm({ form, onChange, onPhoto }) {
           </Field>
           <Field
             label="Clothing last worn"
-            hint="Colors, style, shoes — this is often the most useful detail."
+            hint="Colors, style, shoes."
           >
             <textarea
               className="field-input min-h-[72px]"
@@ -200,6 +199,9 @@ export default function PosterForm({ form, onChange, onPhoto }) {
             label="Medical or mental health notes"
             hint='Optional. Example: "may be confused" or "diabetic — needs medication".'
           >
+            <p className="mt-1 text-xs text-red-700">
+              Only add this if it helps people find them safely.
+            </p>
             <textarea
               className="field-input min-h-[72px]"
               value={form.medicalNotes}
