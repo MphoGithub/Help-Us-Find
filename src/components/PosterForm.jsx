@@ -162,11 +162,11 @@ export default function PosterForm({ form, onChange, onPhoto }) {
             <Field label="Weight / build">
               <input className="field-input" value={form.weight} onChange={set('weight')} />
             </Field>
-            <Field label="Hair color">
-              <input className="field-input" value={form.hairColor} onChange={set('hairColor')} />
+            <Field label="Hair Colour">
+              <input className="field-input" value={form.hairColour} onChange={set('hairColour')} />
             </Field>
-            <Field label="Eye color">
-              <input className="field-input" value={form.eyeColor} onChange={set('eyeColor')} />
+            <Field label="Eye Colour">
+              <input className="field-input" value={form.eyeColour} onChange={set('eyeColour')} />
             </Field>
             <Field label="Skin tone">
               <input className="field-input" value={form.skinTone} onChange={set('skinTone')} />
@@ -187,7 +187,7 @@ export default function PosterForm({ form, onChange, onPhoto }) {
           </Field>
           <Field
             label="Clothing last worn"
-            hint="Colors, style, shoes."
+            hint="Colours, style, shoes."
           >
             <textarea
               className="field-input min-h-[72px]"
@@ -211,11 +211,11 @@ export default function PosterForm({ form, onChange, onPhoto }) {
         </Section>
       ) : (
         <Section title="Description">
-          <Field label="Colors and markings">
+          <Field label="Colours and markings">
             <textarea
               className="field-input min-h-[72px]"
-              value={form.colorsMarkings}
-              onChange={set('colorsMarkings')}
+              value={form.ColoursMarkings}
+              onChange={set('ColoursMarkings')}
             />
           </Field>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -319,11 +319,11 @@ export default function PosterForm({ form, onChange, onPhoto }) {
               onChange={set('vehicleModel')}
             />
           </Field>
-          <Field label="Color">
+          <Field label="Colour">
             <input
               className="field-input"
-              value={form.vehicleColor}
-              onChange={set('vehicleColor')}
+              value={form.vehicleColour}
+              onChange={set('vehicleColour')}
             />
           </Field>
           <Field label="Plate number">

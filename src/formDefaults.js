@@ -37,8 +37,8 @@ export function emptyForm(type = 'person') {
     dateOfBirth: '',
     height: '',
     weight: '',
-    hairColor: '',
-    eyeColor: '',
+    haircolour: '',
+    eyecolour: '',
     skinTone: '',
     distinguishingFeatures: '',
     clothing: '',
@@ -50,7 +50,7 @@ export function emptyForm(type = 'person') {
     sex: '',
     petAge: '',
     sizeWeight: '',
-    colorsMarkings: '',
+    coloursMarkings: '',
     collarTags: '',
     microchip: '',
     petFeatures: '',
@@ -65,7 +65,7 @@ export function emptyForm(type = 'person') {
     website: '',
     vehicleMake: '',
     vehicleModel: '',
-    vehicleColor: '',
+    vehiclecolour: '',
     vehiclePlate: '',
   }
 }
@@ -123,7 +123,7 @@ function formatTime(value) {
 }
 
 export function vehicleLine(form) {
-  const parts = [form.vehicleColor, form.vehicleMake, form.vehicleModel]
+  const parts = [form.vehiclecolour, form.vehicleMake, form.vehicleModel]
     .map((p) => (p || '').trim())
     .filter(Boolean)
   const plate = (form.vehiclePlate || '').trim()

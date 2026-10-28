@@ -141,8 +141,8 @@ const PosterPreview = forwardRef(function PosterPreview({ form }, ref) {
                 <Detail label="Date of birth" value={formatDate(form.dateOfBirth)} />
                 <Detail label="Height" value={form.height} />
                 <Detail label="Weight / build" value={form.weight} />
-                <Detail label="Hair" value={form.hairColor} />
-                <Detail label="Eyes" value={form.eyeColor} />
+                <Detail label="Hair" value={form.hairColour} />
+                <Detail label="Eyes" value={form.eyeColour} />
                 <Detail label="Skin tone" value={form.skinTone} />
                 <Detail label="Languages" value={form.languages} />
               </>
@@ -178,7 +178,7 @@ const PosterPreview = forwardRef(function PosterPreview({ form }, ref) {
           </>
         ) : (
           <>
-            <Detail label="Colors and markings" value={form.colorsMarkings} wide />
+            <Detail label="Colours and markings" value={form.coloursMarkings} wide />
             <Detail label="Collar / tags" value={form.collarTags} />
             <Detail label="Distinguishing features" value={form.petFeatures} />
             <Detail label="Last worn" value={form.petGear} wide />
