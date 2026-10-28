@@ -264,7 +264,7 @@ export default function PosterForm({ form, onChange, onPhoto }) {
         </div>
         <Field
           label="Location"
-          hint='Exact area if you can. Example: "near Main Street Market, City Center".'
+          hint='Exact area if you can. Example: "near Johannesburg CBD, Vosloorus Pick n Pay".'
         >
           <input
             className="field-input"
