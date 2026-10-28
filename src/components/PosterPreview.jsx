@@ -5,6 +5,7 @@ import {
   formatLastSeen,
   hasValue,
   vehicleLine,
+  formatDate,
 } from '../formDefaults.js'
 
 function Detail({ label, value, wide = false }) {
@@ -28,21 +29,6 @@ function Detail({ label, value, wide = false }) {
       </div>
     </div>
   )
-}
-
-function formatDob(iso) {
-  if (!iso) return ''
-  const [y, m, d] = iso.split('-').map(Number)
-  if (!y || !m || !d) return iso
-  try {
-    return new Date(y, m - 1, d).toLocaleDateString(undefined, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
-  } catch {
-    return iso
-  }
 }
 
 const PosterPreview = forwardRef(function PosterPreview({ form }, ref) {
@@ -152,7 +138,7 @@ const PosterPreview = forwardRef(function PosterPreview({ form }, ref) {
               <>
                 <Detail label="Gender" value={form.gender} />
                 <Detail label="Age" value={form.age} />
-                <Detail label="Date of birth" value={formatDob(form.dateOfBirth)} />
+                <Detail label="Date of birth" value={formatDate(form.dateOfBirth)} />
                 <Detail label="Height" value={form.height} />
                 <Detail label="Weight / build" value={form.weight} />
                 <Detail label="Hair" value={form.hairColor} />
