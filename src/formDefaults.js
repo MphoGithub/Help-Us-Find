@@ -100,11 +100,11 @@ export function formatLastSeen(form) {
   return bits.join(' — ')
 }
 
-function formatDate(iso) {
+export function formatDate(iso) {
   const [y, m, d] = iso.split('-').map(Number)
   if (!y || !m || !d) return iso
   try {
-    return new Date(y, m - 1, d).toLocaleDateString(undefined, {
+    return new Date(y, m - 1, d).toLocaleDateString('en-ZA', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -119,7 +119,7 @@ function formatTime(value) {
   if (Number.isNaN(h)) return value
   const date = new Date()
   date.setHours(h, min || 0, 0, 0)
-  return date.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })
+  return date.toLocaleTimeString('en-ZA', { hour: 'numeric', minute: '2-digit' })
 }
 
 export function vehicleLine(form) {
